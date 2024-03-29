@@ -12,8 +12,7 @@
     background-size: cover;
 }
 .sideNav{
-    border: 2px solid black;
-    width: 250px;
+    width: 100px;
     height: 100%;
     position: fixed;
     top: 0;
@@ -21,19 +20,28 @@
     padding: 30px 15px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: width 0.5s;
 }
 
 .user{
-    border: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width:100%;
+    width:60px;
     font-size: 12px;
-    padding: 10px;
+    padding: 20px;
+    margin: auto;
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
+}
+
+.user div{
+    display: none;
 }
 
 .user h2{
@@ -42,11 +50,68 @@
 }
 
 .user-img{
-    width: 40px;
+    width:40px;
     border-radius: 50%;
-    margin: auto;
+    margin: 0 ;
 }
 
 .star-img{
     width: 20px;
+    display: none;
+}
+
+ul{
+    list-style: none;
+    padding: 0 15px;
+}
+
+ul li{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+ul li img{
+    width: 30px;
+    margin-right: 0px;
+}
+
+ul li p{
+    white-space: nowrap;
+    display: none;
+}
+/*here collapse to screen*/
+.sideNav:hover{
+    width: 250px;
+}
+
+.sideNav:hover .user div{
+    display: block;
+}
+
+.sideNav:hover .user {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.sideNav:hover .star-img{
+    display: block;
+}
+
+.sideNav:hover .user-img{
+    margin: 0;
+}
+
+.sideNav:hover ul li p{
+    display: block;
+}
+
+.sideNav:hover ul li img{
+    margin-right: 10px;
+}
+.sideNav:hover ul li{
+    justify-content: flex-start;
 }
